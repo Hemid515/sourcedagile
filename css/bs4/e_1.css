@@ -1,0 +1,460 @@
+*{
+    border: none;
+    outline: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+#myDiagramDiv{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+};
+#sample{
+    width: 500px !important;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+.container{
+    position: relative;
+    padding:0 8px 0 8px;
+}
+header{
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(#dfdddd,#d3d4d4);
+}
+nav{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+/*BUTTONS*/
+.btns{
+    width: 40px;
+    height: 40px;
+    background-color: cornflowerblue;
+    border: none;
+    outline: none;
+}
+
+#plus-btn{
+    width: 60px;
+    height: 60px;
+    border-radius: 10%;
+    font-size: 2.1rem;
+    line-height: 20px;
+    text-align: center; 
+    background-color: white;
+    border: 1px dashed black;   
+
+}
+#square-btn{
+    border-radius: 5%;
+    font-size: 1.5rem;
+    line-height: 20px;
+    text-align: center;   
+    background-color: rgb(66, 66, 248); 
+}
+#diamond-btn{
+    border-radius: 5%;
+    font-size: 1.5rem;
+    line-height: 20px;
+    text-align: center;  
+    transform: rotate(45deg) !important;  
+    background-color: rgb(248, 66, 66); 
+}
+
+#circle-btn{
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 20px;
+    text-align: center;    
+    background-color: rgb(26, 141, 22); 
+}
+.btns:hover{
+    background-color: #57606f !important;
+    cursor: pointer;
+    transform: scale(1.01,1.01);
+    transition: 0.2s;
+    color: white;
+}
+#diamond-btn:hover{
+    transform: rotate(45deg), scale(1.1,1.1) !important;
+}
+/*SECTION*/
+
+section{
+    width: 100%;
+    height: 100vh;
+    background-color: #dfe4ea;
+    overflow: hidden;
+}
+
+#div_box{
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width:100%;
+}
+.bg_div_layout{
+    position: relative;
+    width: 200px !important;
+    height: 100vh;
+    background-color: #c5c7c8;
+    /*border: 0.2px dashed rgb(97, 97, 97);*/
+    margin:0.5px;
+    padding:5px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    cursor: pointer;
+}
+.bg_div_title{
+    width: 100%;
+    height: 20px;
+}
+.confirmClass{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    cursor: pointer;
+    right: 0px;
+}
+
+/* Shapes Items*/
+.squareClass{
+    position: relative;
+    margin: 5px 0;
+    width: 100px;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.circleClass{
+    position: relative;
+    margin: 5px 0;
+    border-radius: 50%;
+    width: 100px;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.rombClass{
+    margin: 5px 0;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.deactive{
+    background-color: #444;
+    }
+.itemInput{
+    background-color: rgba(0, 0, 0, 0);
+    width: 80%;
+}
+
+.bordered{
+    border: 2px dashed black;
+    animation: anime 0.01s infinite;
+}
+@keyframes anime{
+    0%{border: 1.5px dashed black;}
+    50%{border: 1.5px dashed rgb(105, 103, 103);}
+    100%{border: 1.5px dashed black;}
+}
+
+
+.confirmTitle{
+    align-self: flex-start;
+}
+
+
+.connect_to{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 20px;
+    background-color: rgba(72, 209, 205, 0.096);
+    text-align: center;
+    font: 1em lighter helvetica;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    top: 0%;
+    right: -25px;
+    cursor: pointer; 
+}
+.color_in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 20px;
+    background-color: rgba(72, 209, 205, 0.096);
+    text-align: center;
+    font: 1em lighter helvetica;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    bottom: 10%;
+    right: -25px;
+    cursor: pointer; 
+}
+
+
+.bars{
+    width: 5px;
+    height: 8px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 35%;
+    right: 10px;
+    display: block;
+}
+.bars:hover{
+    color: rgb(153, 153, 153);
+    cursor: pointer;
+}
+.to_connect{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 20px;
+    background-color: rgba(72, 209, 205, 0.096);
+    text-align: center;
+    font: 1em lighter helvetica;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    top: 30%;
+    right: -25px;
+    cursor: pointer;  
+}
+
+.wave_line{
+    
+    width: 30px;
+    height: 20px;
+    background-color: rgba(72, 209, 205, 0.096);
+    text-align: center;
+    font: 1em lighter helvetica;
+    border: 1px dashed rgba(0, 0, 0, 0.596);
+    outline: none;
+    position: absolute;
+    top: 60%;
+    right: -30px;
+    cursor: pointer;
+}
+.grid_line{
+    width: 30px;
+    height: 20px;
+    background-color: rgba(72, 209, 205, 0.096);
+    text-align: center;
+    font: 1em lighter helvetica;
+    border: 1px dashed rgba(0, 0, 0, 0.596);
+    outline: none;
+    position: absolute;
+    top: 90%;
+    right: -30px;
+    cursor: pointer;
+}
+
+.x{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(72, 209, 205, 0.096);
+    text-align: center;
+    font: 0.8em lighter helvetica;
+    border: 1px dashed black;
+    outline: none;
+    position: absolute;
+    right: -20px;
+    
+    cursor: pointer;
+}
+
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.purple{
+    background-color: purple;
+}
+.orange{
+    background-color: orange;
+}
+.white{
+    background-color: white;
+}
+.gray{
+    background-color: gray;
+}
+.black{
+    background-color: black;
+}
+/*BUTTONS COLOR*/
+.red_btn{
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    right: -45px;
+    bottom: 10%;
+    cursor: pointer; 
+}
+.blue_btn{
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    right: -65px;
+    bottom: 10%;
+    cursor: pointer; 
+}
+.green_btn{
+    background-color: green;
+    width: 20px;
+    height: 20px;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    right: -85px;
+    bottom: 10%;
+    cursor: pointer; 
+}
+.yellow_btn{
+    background-color: yellow;
+    width: 20px;
+    height: 20px;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    right: -105px;
+    bottom: 10%;
+    cursor: pointer; 
+}
+.purple_btn{
+    background-color: purple;
+    width: 20px;
+    height: 20px;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    right: -125px;
+    bottom: 10%;
+    cursor: pointer; 
+}
+.orange_btn{
+    background-color: orange;
+    width: 20px;
+    height: 20px;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    right: -145px;
+    bottom: 10%;
+    cursor: pointer; 
+}
+.white_btn{
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    right: -165px;
+    bottom: 10%;
+    cursor: pointer; 
+}
+.gray_btn{
+    background-color: gray;
+    width: 20px;
+    height: 20px;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    right: -185px;
+    bottom: 10%;
+    cursor: pointer; 
+}
+.black_btn{
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    border: 1px dashed rgba(0, 0, 0, 0.253);
+    outline: none;
+    position: absolute;
+    right: -205px;
+    bottom: 10%;
+    cursor: pointer; 
+}
+
+.line{
+    position: absolute;
+    width:2px;
+    background-color:rgb(255, 0, 0);
+    z-index: 100;
+  }
+  .line_text{
+      color: #ffffff;
+      position: absolute;
+      top: 50%;   
+      transform: rotate(90deg);
+      font-size: 15px;
+      width: 100%;
+      text-align: center;
+       
+  }
+  .line_input{
+      font-size: 15px;
+      height: 15px;
+      width: 100px;
+      position: absolute;
+      left: -50px;
+      border: none;
+      outline: none;
+      bottom: 50%;
+      transform: rotate(90deg);
+  };
+  
